@@ -1,0 +1,36 @@
+# bot.py
+import os
+
+
+import discord
+import random
+import time
+import asyncio
+
+
+
+TOKEN = "ODQ2Mzg3ODcxNjIyNDk2MjY2.YKuyIQ.8WjH2GalECmXZTRU520NfSh25pE"
+client = discord.Client()
+
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith("what is the horses win percentage"):
+        await message.channel.send("4.65%")
+    if message.content.startswith("thank you"):
+        await message.channel.send("you the man")
+
+
+
+@client.event
+async def on_ready():
+    print("RUNNING")
+
+
+client.run(TOKEN)
+
+
+
